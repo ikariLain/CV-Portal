@@ -1,27 +1,5 @@
- /*Hämta aktuell sidans filnamn
- const currentPage = window.location.pathname.split("/").pop();
 
-/*
-"window.location.pathname" innebär att den hämtar hela url -sök väg (detta: "/mapp/undersida.html")
-*/
-
-// .split("/") skapar en array där varje / delas
-
-//.pop(); Tar den sista värde vilket blir i detta fall "index.html"
-
-
- /* Hämta alla länkar i navbaren och subnav
- const links = document.querySelectorAll(".navbar a, .subnav-content a");
-
- /* Loopa igenom länkar och markera den aktiva sidan
- links.forEach(link => {
-     if (link.getAttribute("href") === currentPage) {
-         link.classList.add("active");
-     }
- });
-
-*/
-
+//Show active html site
 
 function setActivePage() {
     const currentPath = window.location.pathname;
@@ -40,19 +18,7 @@ function setActivePage() {
 
 document.addEventListener('DOMContentLoaded', setActivePage);
 
-
-
-
-// Påskägg
-
-// Ta bort denna del eftersom du redan har en DOMContentLoaded-händelse
-// Hämta påskäggselementet (den osynliga delen)
-// const easterEgg = document.getElementById('easter-egg');
-// easterEgg.addEventListener('click', function() {
-//     document.body.style.backgroundColor = 'darkblue'; 
-//     alert("Grattis, du hittade påskägget!");
-// });
-
+//-------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function() {
     const easterEgg = document.getElementById('easter-egg');
