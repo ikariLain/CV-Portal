@@ -1,4 +1,3 @@
-
 //Show active html site
 
 function setActivePage() {
@@ -23,13 +22,40 @@ document.addEventListener('DOMContentLoaded', setActivePage);
 document.addEventListener('DOMContentLoaded', function() {
     const easterEgg = document.getElementById('easter-egg');
 
+    if (!easterEgg) {
+        console.error('Easter egg element not found!');
+        return;
+    }
+
+    // Göm ägget initialt
+    easterEgg.style.opacity = '0';
+    
+    // Visa ägget med fade-in effekt
     setTimeout(function() {
-        easterEgg.style.opacity = 1; 
-    }, 5000); // 5000 ms = 5sec
+        easterEgg.style.opacity = '1';
+        easterEgg.style.transform = 'scale(1)';
+    }, 5000);
 
     easterEgg.addEventListener('click', function() {
-        document.body.style.backgroundColor = 'darkblue'; // Byt bakgrund
-        alert("Grattis, du hittade påskägget!"); // Visa alert
+        // Spela upp hittad-animation
+        easterEgg.style.animation = 'eggFound 1s forwards';
+        
+        // Ändra bakgrund med fade-effekt
+        document.body.style.transition = 'background-image 1s ease-in-out';
+        document.body.style.backgroundImage = "url('Asset/Pokemon-egg.png')";
+        
+        // Vänta lite innan alert visas
+        setTimeout(() => {
+            alert("Grattis, du hittade påskägget! 🎉");
+            localStorage.setItem('easterEggFound', 'true');
+        }, 1000);
+    });
+
+    // Lägg till mouseover ljud-effekt (valfritt)
+    easterEgg.addEventListener('mouseover', function() {
+        // Om du vill lägga till ett ljud när man hovrar över ägget
+        // const hoverSound = new Audio('Asset/hover-sound.mp3');
+        // hoverSound.play();
     });
 });
 
