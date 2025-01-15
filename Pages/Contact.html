@@ -2,35 +2,40 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakta Mig</title>
+    <link rel="stylesheet" href="/stylesheet.css">
+    <script src="/script.js"></script>
+    <!-- Font Awesome för ikoner -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<!-- Submenu -->
     <nav>
         <ul class="submenu" id="submenu">
-            <a href="Index.html" class="submenu-item">Startsida</a>
+            <a href="/Index.html" class="submenu-item">Startsida</a>
             <a href="/Pages/About.html" class="submenu-item">About me</a>
             <a href="/Pages/Projects.html" class="submenu-item">Projects</a>
-            <a href="/Pages/Contact.html" class="submenu-item">Kontakt</a>
+            <a href="/Pages/Contact.html" class="submenu-item">Contact</a>
         </ul>
     </nav>
-<!-- Ends -->
 
-<h1>Welcome to my contact website</h1>
+    <div class="contact-container">
+        <h1>Kontakta Mig</h1>
+        
+        <div class="contact-info">
 
-<!-- Text import google font -->
-<h1 class="open-sans-header">Detta är en rubrik</h1>
-<p class="open-sans-paragraph">Detta är ett stycke text.</p>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/ditt-profil" target="_blank">LinkedIn Profil</a></p>
+            </div>
 
-<!-- TODO: Add func to add database when inputing -->
-
-
-
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/ditt-användarnamn" target="_blank">GitHub Profil</a></p>
+            </div>
+        </div>
+    </div>
 </body>
-
-
 </html>
