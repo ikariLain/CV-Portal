@@ -1,123 +1,276 @@
+/* Generell styling */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-image: url('../Asset/Background_img.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    position: relative;
+}
 
-.poppins-regular {
-    font-family: "Poppins", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+/* Lägg till en overlay för bättre läsbarhet */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7); /* Ändrat från 0.9 till 0.7 för mer genomskinlighet */
+    z-index: -1;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
 
 .submenu {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    background-color: #f5f5f5;
-    padding: 15px;
 }
 
 .submenu-item {
-    padding: 10px 15px;
     text-decoration: none;
     color: #333;
-    border-radius: 4px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
     transition: all 0.3s ease;
 }
 
 .submenu-item:hover {
-    background-color: #e0e0e0;
-}
-
-.submenu-item.active {
     background-color: #007bff;
     color: white;
 }
 
-/*---------------Extra ideas--------------------*/ 
-
-
-/*Makes the website more responsive */
-article {
-    width: clamp(200px, 50%, 600px )
+/* CV-sektion */
+.cv-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
 }
 
-:root {
-    --text-color: red;
+.cv-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+    transition: transform 0.2s ease;
 }
 
-/*In this context p has red text beacuse of local variable in root */
-p {
-/* In this context the variable is override with the color black */
-    --text-color: black; /* */
-    color: var(--text-color);
+.cv-item:hover {
+    transform: translateX(5px);
 }
 
+.cv-item h4 {
+    color: #0056b3; /* Mörkare blå för bättre kontrast */
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600; /* Fetare text */
+}
 
-/* Google fonts*/
-body {
-        font-family: 'Poppins', sans-serif;
-        background-image: url(Asset/Background_Image.jpg);
-        background-size: cover; /* Anpassar bakgrunden för att täcka hela fönstret */
-        background-position: center;
-        background-attachment: fixed; /* Gör bakgrunden fast */
-        background-size: cover; 
-        margin: 0;
-        padding: 0;
+.cv-item p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+.cv-item ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    color: #666;
+}
+
+/* Rubriker */
+h1, h2, h3 {
+    color: #1a1a1a; /* Mörkare text för rubriker */
+    font-weight: 700; /* Fetare text */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+/* Portfolio-sektion */
+.portfolio-section {
+    margin-top: 3rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 1rem;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.project-card p {
+    padding: 0 1rem;
+    color: #666;
+}
+
+.project-links {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+    background-color: #0056b3;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
     
+    .submenu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cv-item {
+        padding: 1rem;
+    }
 }
 
-/* Link google fonts */
-
-.open-sans-header {
-  font-family: "Open Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: 700; /* T.ex. Bold */
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
+/* Uppdatera container-elementen för bättre kontrast */
+.cv-section, nav, .project-card {
+    background: rgba(255, 255, 255, 0.85); /* Ändrat från 0.95 till 0.85 */
+    backdrop-filter: blur(5px); /* Minskat blur-effekten */
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Förstärkt skuggan något */
 }
 
-.open-sans-paragraph {
-  font-family: "Open Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: 400; /* T.ex. Regular */
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
+/* Förstärk skuggorna för bättre djup */
+.cv-section, nav, .project-card {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-/* Colum test */
-
-.row {
-    overflow: hidden; /* För att hantera float */
-  }
-  
-  .column {
-    float: left;
-    width: 50%; /* Två kolumner delar 50% vardera */
-    padding: 10px;
-    background-color: lightcoral;
-  }
-
-
-  /* Påskägg  */
-  body {
-    background-color: lightblue;
-    font-family: Arial, sans-serif;
-    padding: 20px;
+.hidden-egg {
+    position: fixed;
+    width: 80px; /* Större storlek */
+    height: 80px;
+    cursor: pointer;
+    bottom: 30px;
+    right: 30px;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.2)); /* Lägg till skugga */
+    animation: float 3s ease-in-out infinite; /* Flytande animation */
 }
 
-/* Udda osynlig del (påskägg) */
-#easter-egg {
+.hidden-egg:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.3));
+}
+
+/* Flytande animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Animation när ägget hittas */
+@keyframes eggFound {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Lägg till en glödande effekt */
+.hidden-egg::after {
+    content: '';
     position: absolute;
-    bottom: 100px;
-    left: 50px; /* Position of the easter egg */
-    width: 50px; /* You can adjust the size according to your image dimensions */
-    height: 50px; /* Adjust the height to fit your image */
-    background-size: cover; /* Ensure the image covers the entire div */
-    background-position: center; /* Center the image inside the div */
-    opacity: 0; /* Make it visible from the start */
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, rgba(255,215,0,0) 70%);
+    animation: glow 2s ease-in-out infinite alternate;
+    z-index: -1;
 }
 
-/* Change appearance on hover */
-#easter-egg:hover {
-    background-image: url('Asset/Pokemon-egg.png'); /* Semi-transparent green overlay on hover */
-    transition: background-color 1s ease; 
+@keyframes glow {
+    from {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
 }
