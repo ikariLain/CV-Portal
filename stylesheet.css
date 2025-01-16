@@ -127,68 +127,33 @@ h2 {
 }
 
 .project-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
+    padding: 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .project-card img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.3s ease;
-}
-
-/* Lägg till hover-effekt på bilden */
-.project-card:hover img {
-    transform: scale(1.05);
-}
-
-.project-card .project-content {
-    padding: 1.5rem;
-    flex-grow: 1; /* Tar upp återstående utrymme */
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card h3 {
-    margin: 0 0 1rem 0;
-    color: #2c3e50;
-}
-
-.project-card p {
-    margin: 0 0 1.5rem 0;
-    color: #666;
-    flex-grow: 1; /* Gör att texten tar upp tillgängligt utrymme */
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 4px;
 }
 
 .project-links {
-    margin-top: auto; /* Trycker länkarna till botten */
-    display: flex;
-    gap: 1rem;
+    margin-top: 20px;
 }
 
-.project-links a {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
+.read-more-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #4CAF50;
     color: white;
-    text-decoration: none;
-    border-radius: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.project-links a:hover {
-    background-color: #0056b3;
 }
 
 /* Responsiv design */
@@ -221,34 +186,31 @@ h2 {
 }
 
 .hidden-egg {
-    position: fixed;
-    width: 80px; /* Större storlek */
-    height: 80px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    opacity: 0; /* Börjar som osynlig */
+    transition: opacity 0.3s ease;
     cursor: pointer;
-    bottom: 30px;
-    right: 30px;
-    transition: all 0.3s ease-in-out;
-    z-index: 1000;
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.2)); /* Lägg till skugga */
-    animation: float 3s ease-in-out infinite; /* Flytande animation */
+    z-index: 2;
+    display: none; /* Dölj helt från början */
 }
 
+.egg-zone {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.egg-zone:hover + .hidden-egg,
 .hidden-egg:hover {
-    transform: scale(1.2) rotate(10deg);
-    filter: drop-shadow(0 0 15px rgba(0,0,0,0.3));
-}
-
-/* Flytande animation */
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+    opacity: 1;
+    display: block; /* Visa när man hovrar */
 }
 
 /* Animation när ägget hittas */
@@ -309,4 +271,61 @@ h2 {
     .project-card img {
         height: 250px;
     }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.read-more-btn {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    background-color: #45a049;
+}
+
+.modal-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.modal-link:hover {
+    text-decoration: underline;
 }
