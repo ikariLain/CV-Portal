@@ -21,41 +21,54 @@ document.addEventListener('DOMContentLoaded', setActivePage);
 
 document.addEventListener('DOMContentLoaded', function() {
     const easterEgg = document.getElementById('easter-egg');
+    const eggZone = document.querySelector('.egg-zone');
 
-    if (!easterEgg) {
-        console.error('Easter egg element not found!');
+    if (!easterEgg || !eggZone) {
+        console.error('Easter egg elements not found!');
         return;
     }
 
-    // Göm ägget initialt
-    easterEgg.style.opacity = '0';
-    
-    // Visa ägget med fade-in effekt
-    setTimeout(function() {
+    // Kontrollera om ägget redan är hittat
+    if (localStorage.getItem('easterEggFound')) {
         easterEgg.style.opacity = '1';
-        easterEgg.style.transform = 'scale(1)';
-    }, 5000);
+        easterEgg.style.pointerEvents = 'auto';
+    } else {
+        // Initiala inställningar
+        easterEgg.style.opacity = '0';
+        easterEgg.style.pointerEvents = 'none';
+    }
 
-    easterEgg.addEventListener('click', function() {
-        // Spela upp hittad-animation
-        easterEgg.style.animation = 'eggFound 1s forwards';
+    eggZone.addEventListener('mouseenter', function() {
+        easterEgg.style.opacity = '1';
+        easterEgg.style.pointerEvents = 'auto'; // Aktivera musinteraktioner för ägget
+    });
+
+    eggZone.addEventListener('mouseleave', function() {
+        if (!localStorage.getItem('easterEggFound')) {
+            easterEgg.style.opacity = '0';
+            easterEgg.style.pointerEvents = 'none';
+        }
+    });
+
+    // Lägg till click event direkt på ägget
+    easterEgg.addEventListener('click', function(e) {
+        console.log('Egg clicked!'); // För debugging
+        e.preventDefault();
         
-        // Ändra bakgrund med fade-effekt
+        // Spela animationen
+        this.style.animation = 'eggFound 1s forwards';
+        
+        // Ändra bakgrunden
         document.body.style.transition = 'background-image 1s ease-in-out';
         document.body.style.backgroundImage = "url('Asset/Pokemon-egg.png')";
         
-        // Vänta lite innan alert visas
+        // Visa meddelandet och spara i localStorage
         setTimeout(() => {
             alert("Grattis, du hittade påskägget! 🎉");
             localStorage.setItem('easterEggFound', 'true');
+            this.style.opacity = '1';
+            this.style.pointerEvents = 'auto';
         }, 1000);
-    });
-
-    // Lägg till mouseover ljud-effekt (valfritt)
-    easterEgg.addEventListener('mouseover', function() {
-        // Om du vill lägga till ett ljud när man hovrar över ägget
-        // const hoverSound = new Audio('Asset/hover-sound.mp3');
-        // hoverSound.play();
     });
 });
 
@@ -73,5 +86,20 @@ function detect1337(event) {
     // Begränsa bufferten till de senaste 4 tecknen
     if (inputBuffer.length > 4) {
         inputBuffer = inputBuffer.slice(-4);
+    }
+}
+
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+// Stäng modalen om användaren klickar utanför den
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
     }
 }
