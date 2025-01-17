@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const eggZone = document.querySelector('.egg-zone');
 
     if (!easterEgg || !eggZone) {
-        console.error('Easter egg elements not found!');
+        console.log('Easter egg elements not found!');
         return;
     }
 
@@ -52,15 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Lägg till click event direkt på ägget
     easterEgg.addEventListener('click', function(e) {
-        console.log('Egg clicked!'); // För debugging
+        console.log('Egg clicked!');
         e.preventDefault();
         
         // Spela animationen
         this.style.animation = 'eggFound 1s forwards';
         
-        // Ändra bakgrunden
+        // Ändra bakgrunden med korrekt sökväg från Pages-mappen
         document.body.style.transition = 'background-image 1s ease-in-out';
-        document.body.style.backgroundImage = url(/Asset/Pokemon-egg.png);
+        document.body.style.backgroundImage = 'url("../Asset/Pokemon-egg.png")';
         
         // Visa meddelandet och spara i localStorage
         setTimeout(() => {
