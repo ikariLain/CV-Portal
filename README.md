@@ -16,9 +16,9 @@ Försök lösa denna uppgift utan CSS-ramverk så som Bootstrap. Du kommer ha me
 ## Innehåll
 * Alla sidorna på webbplatsen ska ha innehåll
 * Innehåll som måste finnas någonstans på webbplatsen är:
-   * En presentation av dig själv
-   * Ditt CV med utbildningar, arbetsplatser m.m. (precis som ett vanligt CV)
-   * En portfolio med projekt du gjort (du kan som minst lägga in dina skolprojekt men du kan även lägga till andra projekt)
+* En presentation av dig själv
+* Ditt CV med utbildningar, arbetsplatser m.m. (precis som ett vanligt CV)
+* En portfolio med projekt du gjort (du kan som minst lägga in dina skolprojekt men du kan även lägga till andra projekt)
 * Det ska finnas minst en bild på sidan, gärna fler.
 * Resterande sidor kan innehålla bara Lorem Ipsum-text eller så hittar du på något värdefullt så som kontaktuppgifter eller något annat som passar in på sidan.
 
