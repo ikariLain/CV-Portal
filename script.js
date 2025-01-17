@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentPath = window.location.pathname;
         const imagePath = currentPath.includes('/Pages/') 
             ? '../Asset/Pokemon-egg.png'  // Om vi är i Pages-mappen
-            : '/Asset/Pokemon-egg.png';  // Om vi är i index.html
+            : 'Asset/Pokemon-egg.png';  // Om vi är i index.html
         
         // Ändra bakgrunden med korrekt sökväg
         document.body.style.transition = 'background-image 1s ease-in-out';
