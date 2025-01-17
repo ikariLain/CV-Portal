@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Ändra bakgrunden
         document.body.style.transition = 'background-image 1s ease-in-out';
-        document.body.style.backgroundImage = url(Asset/Pokemon-egg.png);
+        document.body.style.backgroundImage = url(/Asset/Pokemon-egg.png);
         
         // Visa meddelandet och spara i localStorage
         setTimeout(() => {
