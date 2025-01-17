@@ -58,9 +58,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Spela animationen
         this.style.animation = 'eggFound 1s forwards';
         
-        // Ändra bakgrunden med korrekt sökväg från Pages-mappen
+        // Kontrollera vilken sida vi är på och sätt rätt sökväg
+        const currentPath = window.location.pathname;
+        const imagePath = currentPath.includes('/Pages/') 
+            ? '../Asset/Pokemon-egg.png'  // Om vi är i Pages-mappen
+            : './Asset/Pokemon-egg.png';  // Om vi är i index.html
+        
+        // Ändra bakgrunden med korrekt sökväg
         document.body.style.transition = 'background-image 1s ease-in-out';
-        document.body.style.backgroundImage = 'url("../Asset/Pokemon-egg.png")';
+        document.body.style.backgroundImage = `url("${imagePath}")`;
         
         // Visa meddelandet och spara i localStorage
         setTimeout(() => {
