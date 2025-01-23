@@ -1,4 +1,3 @@
-/* Generell styling */
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -13,7 +12,7 @@ body {
     position: relative;
 }
 
-/* Lägg till en overlay för bättre läsbarhet */
+
 body::before {
     content: '';
     position: fixed;
@@ -21,11 +20,10 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7); /* Ändrat från 0.9 till 0.7 för mer genomskinlighet */
+    background: rgba(255, 255, 255, 0.7); 
     z-index: -1;
 }
 
-/* Navigation */
 nav {
     background: white;
     padding: 1rem;
@@ -56,7 +54,6 @@ nav {
     color: white;
 }
 
-/* CV-sektion */
 .cv-section {
     background: white;
     border-radius: 12px;
@@ -79,10 +76,10 @@ nav {
 }
 
 .cv-item h4 {
-    color: #0056b3; /* Mörkare blå för bättre kontrast */
+    color: #0056b3; 
     margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
-    font-weight: 600; /* Fetare text */
+    font-weight: 600; 
 }
 
 .cv-item p {
@@ -96,10 +93,10 @@ nav {
     color: #666;
 }
 
-/* Rubriker */
+
 h1, h2, h3 {
-    color: #1a1a1a; /* Mörkare text för rubriker */
-    font-weight: 700; /* Fetare text */
+    color: #1a1a1a; 
+    font-weight: 700; 
 }
 
 h1 {
@@ -115,7 +112,6 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-/* Portfolio-sektion */
 .portfolio-section {
     margin-top: 3rem;
 }
@@ -156,7 +152,6 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
-/* Responsiv design */
 @media (max-width: 768px) {
     body {
         padding: 1rem;
@@ -172,15 +167,15 @@ h2 {
     }
 }
 
-/* Uppdatera container-elementen för bättre kontrast */
+
 .cv-section, nav, .project-card {
-    background: rgba(255, 255, 255, 0.85); /* Ändrat från 0.95 till 0.85 */
-    backdrop-filter: blur(5px); /* Minskat blur-effekten */
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(5px); 
     -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Förstärkt skuggan något */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
 }
 
-/* Förstärk skuggorna för bättre djup */
+
 .cv-section, nav, .project-card {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
@@ -191,11 +186,11 @@ h2 {
     right: 20px;
     width: 50px;
     height: 50px;
-    opacity: 0; /* Börjar som osynlig */
+    opacity: 0; 
     transition: opacity 0.3s ease;
     cursor: pointer;
     z-index: 2;
-    display: none; /* Dölj helt från början */
+    display: none; 
 }
 
 .egg-zone {
@@ -210,10 +205,10 @@ h2 {
 .egg-zone:hover + .hidden-egg,
 .hidden-egg:hover {
     opacity: 1;
-    display: block; /* Visa när man hovrar */
+    display: block; 
 }
 
-/* Animation när ägget hittas */
+
 @keyframes eggFound {
     0% {
         transform: scale(1) rotate(0deg);
@@ -229,7 +224,7 @@ h2 {
     }
 }
 
-/* Lägg till en glödande effekt */
+
 .hidden-egg::after {
     content: '';
     position: absolute;
@@ -254,7 +249,6 @@ h2 {
     }
 }
 
-/* Responsiv bildstorlek för olika skärmstorlekar */
 @media (max-width: 1200px) {
     .project-card img {
         height: 350px;
@@ -329,5 +323,3 @@ h2 {
 .modal-link:hover {
     text-decoration: underline;
 }
-
-/*TODO: Orgenize the code */
