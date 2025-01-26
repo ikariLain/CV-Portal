@@ -1,20 +1,39 @@
 //Show active html site
-
 function setActivePage() {
     const currentPath = window.location.pathname;
+    console.log('Current path:', currentPath); 
+    
     const menuItems = document.querySelectorAll('.submenu-item');
     
     menuItems.forEach(item => {
+        const itemPath = item.getAttribute('href');
+        console.log('Checking path:', itemPath); 
+        
+        
         item.classList.remove('active');
         
-        const itemPath = item.getAttribute('href');
-        // Compare full paths or just filenames
-        if (currentPath.endsWith(itemPath) || currentPath.includes(itemPath)) {
+        // Hantera olika scenarion för sökvägar
+        if (
+            // För index.html eller rotsidan
+            (currentPath === '/' && itemPath === 'index.html') ||
+            (currentPath === '/index.html' && itemPath === 'index.html') ||
+            
+            // För undersidor i Pages-mappen
+            (itemPath.includes('Pages/') && currentPath.includes(itemPath)) ||
+            
+            // För relativa sökvägar från Pages-mappen
+            (currentPath.includes('Pages/') && itemPath.includes(currentPath.split('/').pop())) ||
+            
+            // Exakt matchning av sökvägar
+            currentPath.endsWith(itemPath)
+        ) {
             item.classList.add('active');
+            console.log('Active item found:', itemPath); // För debugging
         }
     });
 }
 
+// Kör funktionen när sidan laddas
 document.addEventListener('DOMContentLoaded', setActivePage);
 
 //-------------------------------------------------
