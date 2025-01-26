@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Kontrollera vilken sida vi är på och sätt rätt sökväg
         const currentPath = window.location.pathname;
-        const imagePath = currentPath.includes('/Pages/') 
+        const imagePath = currentPath.includes('/docs/') 
             ? '../Asset/Pokemon-egg.png'  // Om vi är i Pages-mappen
             : 'Asset/Pokemon-egg.png';  // Om vi är i index.html
         
