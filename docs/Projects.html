@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <script src="../script.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins&display=swap" rel="stylesheet">
+</head>
+    <nav>
+        <ul class="submenu" id="submenu">
+            <a href="index.html" class="submenu-item">Startsida</a>
+            <a href="../docs/About.html" class="submenu-item">About me</a>
+            <a href="../docs/Projects.html" class="submenu-item">Projects</a>
+            <a href="../docs/Contact.html" class="submenu-item">Contact</a>
+        </ul>
+    </nav>
+
+<h1>Projects</h1>    
+<section class="portfolio-section"></section>
+    <h2>Portfolio</h2>
+    
+    <div class="project-grid">
+        <div class="project-card">
+            <h3>Salamander Bank</h3>
+            <img src="../Asset/Salamander_bank_logo.jpg" alt="Projekt 1 skärmdump">
+            <div class="project-links">
+                <button onclick="openModal('salamanderModal')" class="read-more-btn">Läs mer</button>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Individuellt Databasprojekt</h3>
+            <img src="../Asset/Database_logo.jpg" alt="Projekt 2 skärmdump">
+            <div class="project-links">
+                <button onclick="openModal('databaseModal')" class="read-more-btn">Läs mer</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="salamanderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('salamanderModal')">&times;</span>
+            <h2>Salamander Bank</h2>
+            <p>Salamander Bank är en konsolbaserad bankapplikation utformad för att hantera konton och utföra transaktioner. Den låter användare skapa konton med e-postverifiering, logga in, hantera bankkonton, överföra pengar med SMS-notifikationer, växla valutor och visa transaktionshistorik. Administratörer kan skapa användarkonton.</p>
+            <p>Teknologier: C#, .NET</p>
+            <a href="https://github.com/Marremelad/SalamanderBank" target="_blank" class="modal-link">Besök GitHub Repository</a>
+        </div>
+    </div>
+
+    <div id="databaseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('databaseModal')">&times;</span>
+            <h2>Individuellt Databasprojekt</h2>
+            <p>Det individuella databasprojektet är en C#-konsolapplikation som hanterar information om studenter och personal. Projektet är strukturerat med flera komponenter, inklusive en data-mapp för datakällor och databashantering, en models-mapp för datamodeller.</p>
+            <p>Teknologier: C#, SQL, Entity Framework</p>
+            <a href="https://github.com/ikariLain/Individuellt-databasprojekt" target="_blank" class="modal-link">Besök GitHub Repository</a>
+        </div>
+    </div>
+</section>
+
+<!-- Easter egg container - bara ägget och hover-zonen -->
+<div class="easter-egg-container">
+    <div class="egg-zone"></div>
+    <img id="easter-egg" src="../Asset/Pokemon-egg.png" alt="Easter Egg" class="hidden-egg">
+</div>
+
+
+</body>
+</html>
