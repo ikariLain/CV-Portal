@@ -54,6 +54,13 @@ nav {
     color: white;
 }
 
+.submenu-item.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    
+}
+
 .cv-section {
     background: white;
     border-radius: 12px;
