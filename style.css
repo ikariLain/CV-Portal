@@ -367,3 +367,43 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+
+.animate-title {
+    animation: modernFadeIn 2s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    animation-fill-mode: forwards;
+    position: relative;
+    overflow: hidden;
+    
+    /* Centrering */
+    position: absolute;
+    top: 25rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+@keyframes modernFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -30%) scale(0.95);
+        filter: blur(4px);
+    }
+    30% {
+        opacity: 0.5;
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Lägg till hover-effekt för extra dynamik */
+.animate-title:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
