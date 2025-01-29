@@ -2,16 +2,15 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <script src="../script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakta Mig</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins&display=swap" rel="stylesheet">
+    <script src="../script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
     <nav>
         <ul class="submenu" id="submenu">
-            <a href="index.html" class="submenu-item">Startsida</a>
+            <a href="../index.html" class="submenu-item">Startsida</a>
             <a href="../Pages/About.html" class="submenu-item">About me</a>
             <a href="../Pages/Projects.html" class="submenu-item">Projects</a>
             <a href="../Pages/Contact.html" class="submenu-item">Contact</a>
@@ -82,5 +81,28 @@
         <p>Du skrev 1337! Du är en riktig hacker! 🎉</p>
     </div>
 </div>
+<script>
+    let keySequence = '';
+    
+    document.addEventListener('keydown', (event) => {
+        keySequence += event.key;
+        
+        // Behåll bara de senaste 4 tecknen
+        if (keySequence.length > 4) {
+            keySequence = keySequence.slice(-4);
+        }
+        
+        // Kolla om sekvensen är "1337"
+        if (keySequence === '1337') {
+            document.getElementById('hackerModal').style.display = 'block';
+            keySequence = ''; // Återställ sekvensen
+        }
+    });
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+        keySequence = ''; // Återställ sekvensen när modalen stängs
+    }
+</script>
 </body>
 </html>
