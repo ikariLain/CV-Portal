@@ -102,13 +102,12 @@ document.addEventListener("keydown", detect1337);
 let inputBuffer = ""; // Håller reda på vad användaren skriver
 
 function detect1337(event) {
-    inputBuffer += event.key; // Lägg till varje tangent som användaren trycker på
+    inputBuffer += event.key;
     if (inputBuffer.includes("1337")) {
-        alert("Du skrev 1337! Du är en riktig hacker!");
-        inputBuffer = ""; // Nollställ bufferten efter att popup har visats
+        openModal('hackerModal'); // Ersätter alert med openModal
+        inputBuffer = "";
     }
 
-    // Begränsa bufferten till de senaste 4 tecknen
     if (inputBuffer.length > 4) {
         inputBuffer = inputBuffer.slice(-4);
     }
@@ -127,4 +126,11 @@ window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
         event.target.style.display = "none";
     }
+}
+
+let counter;
+
+for (let index = 0; index <length; index++) {
+    
+    counter++;
 }
