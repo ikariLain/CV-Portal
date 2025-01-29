@@ -369,41 +369,68 @@ h2 {
 }
 
 .animate-title {
-    animation: modernFadeIn 2s cubic-bezier(0.23, 1, 0.32, 1);
-    opacity: 0;
-    animation-fill-mode: forwards;
-    position: relative;
+    animation: modernFadeIn 2s cubic-bezier(0.23, 1, 0.32, 1), textGlow 3s ease-in-out infinite 2s;
+    opacity: 0; /* Start invisible, animation will make it visible */
+    animation-fill-mode: forwards; /* Keep the final state after animation */
+    position: relative; /* Changed from absolute to relative */
     overflow: hidden;
-    
-    /* Centrering */
-    position: absolute;
-    top: 25rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
-    margin: 0;
+    margin: 10rem 0 2rem 0;
+    transition: all 0.3s ease;
+    font-size: 4rem; /* Increased from 2.5rem */
+    letter-spacing: -0.03em; /* Improves readability for large text */
+    color: #1a1a1a; /* Ensure the color contrasts with the background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .animate-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .animate-title {
+        font-size: 3rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .animate-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* Keep existing animations, modified hover scale */
+.animate-title:hover {
+    transform: scale(1.03);
+    text-shadow: 0 0 25px rgba(0, 123, 255, 0.6);
 }
 
 @keyframes modernFadeIn {
     0% {
         opacity: 0;
-        transform: translate(-50%, -30%) scale(0.95);
+        transform: translateY(-20px) scale(0.95);
         filter: blur(4px);
-    }
-    30% {
-        opacity: 0.5;
-        filter: blur(2px);
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translateY(0) scale(1);
         filter: blur(0);
     }
 }
 
-/* Lägg till hover-effekt för extra dynamik */
-.animate-title:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 123, 255, 0.6), 
+                     0 0 30px rgba(0, 123, 255, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    }
 }
