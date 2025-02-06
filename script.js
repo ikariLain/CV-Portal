@@ -47,19 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Kontrollera om ägget redan är hittat
+    
     if (localStorage.getItem('easterEggFound')) {
         easterEgg.style.opacity = '1';
         easterEgg.style.pointerEvents = 'auto';
     } else {
-        // Initiala inställningar
+        
         easterEgg.style.opacity = '0';
         easterEgg.style.pointerEvents = 'none';
     }
 
     eggZone.addEventListener('mouseenter', function() {
         easterEgg.style.opacity = '1';
-        easterEgg.style.pointerEvents = 'auto'; // Aktivera musinteraktioner för ägget
+        easterEgg.style.pointerEvents = 'auto'; 
     });
 
     eggZone.addEventListener('mouseleave', function() {
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentPath = window.location.pathname;
         const imagePath = currentPath.includes('/Pages/') 
             ? '../Asset/Pokemon-egg.png'  /* Om vi är Pages  */
-            : 'Asset/Pokemon-egg.png';  /*Om vi är index */
+            : './Asset/Pokemon-egg.png';  /*Om vi är index */
         
         // Ändra bakgrunden med korrekt sökväg
         document.body.style.transition = 'background-image 1s ease-in-out';
