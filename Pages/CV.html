@@ -82,28 +82,5 @@
         <p>Du skrev 1337! Du är en riktig hacker! 🎉</p>
     </div>
 </div>
-<script>
-    let keySequence = '';
-    
-    document.addEventListener('keydown', (event) => {
-        keySequence += event.key;
-        
-        // Behåll bara de senaste 4 tecknen
-        if (keySequence.length > 4) {
-            keySequence = keySequence.slice(-4);
-        }
-        
-        // Kolla om sekvensen är "1337"
-        if (keySequence === '1337') {
-            document.getElementById('hackerModal').style.display = 'block';
-            keySequence = ''; // Återställ sekvensen
-        }
-    });
-
-    function closeModal(modalId) {
-        document.getElementById(modalId).style.display = 'none';
-        keySequence = ''; // Återställ sekvensen när modalen stängs
-    }
-</script>
 </body>
 </html>
