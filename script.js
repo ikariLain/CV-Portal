@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Kontrollera vilken sida vi är på och sätt rätt sökväg
         const currentPath = window.location.pathname;
-        const imagePath = currentPath.includes('/docs/') 
-            ? '../Asset/Pokemon-egg.png'  // Om vi är i Pages-mappen
-            : 'Asset/Pokemon-egg.png';  // Om vi är i index.html
+        const imagePath = currentPath.includes('/Pages/') 
+            ? '../Asset/Pokemon-egg.png'  /* Om vi är Pages  */
+            : '/Asset/Pokemon-egg.png';  /*Om vi är index */
         
         // Ändra bakgrunden med korrekt sökväg
         document.body.style.transition = 'background-image 1s ease-in-out';
