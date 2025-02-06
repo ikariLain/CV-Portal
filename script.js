@@ -37,7 +37,6 @@ function setActivePage() {
 document.addEventListener('DOMContentLoaded', setActivePage);
 
 //-------------------------------------------------
-
 document.addEventListener('DOMContentLoaded', function() {
     const easterEgg = document.getElementById('easter-egg');
     const eggZone = document.querySelector('.egg-zone');

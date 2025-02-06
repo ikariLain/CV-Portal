@@ -442,3 +442,15 @@ h2 {
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
     margin-bottom: 2rem;
 }
+
+.painting {
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.painting img {
+    width: 100%;
+}
