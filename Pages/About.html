@@ -1,108 +1,24 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakta Mig</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <script src="../script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Kontakta Mig</title>
 </head>
+<body>
     <nav>
         <ul class="submenu" id="submenu">
             <a href="../index.html" class="submenu-item">Startsida</a>
-            <a href="../Pages/About.html" class="submenu-item">About me</a>
+            <a href="../Pages/About.html" class="submenu-item">CV</a>
             <a href="../Pages/Projects.html" class="submenu-item">Projects</a>
+            <a href="../Pages/About.html" class="submenu-item">About me</a>
             <a href="../Pages/Contact.html" class="submenu-item">Contact</a>
         </ul>
     </nav>
-
-<h1>About me </h1>    
-
-<p>Hej! Jag heter Matheus och jag är en driven och nyfiken person som alltid strävar efter att lära mig nya saker. För närvarande studerar jag till Fullstack .NET-utvecklare på Chas Academy. På fritiden älskar jag att koda egna projekt och utforska nya teknologier inom webbutveckling.</p>
-<p>Jag har ett stort intresse för programmering och teknik och jag är alltid redo att ta mig an nya utmaningar. Som student på Chas Academy får jag möjlighet att utveckla mina kunskaper inom både front- och backend-utveckling, vilket jag är mycket entusiastisk över.</p>
-
-<section class="cv-section">
-    <h2>Mitt CV</h2>
-    
-    <div class="education">
-        <h3>Utbildning</h3>
-        <div class="cv-item">
-            <h4>Fullstack .NET-utvecklare</h4>
-            <p>Chas Academy, 2023 - Pågående</p>
-            <p>Utbildning inom modern webbutveckling med fokus på .NET, C#, JavaScript och databaser.</p>
-        </div>
-    </div>
-
-    <div class="experience">
-        <h3>Arbetslivserfarenhet</h3>
-        
-        <div class="cv-item">
-            <h4>Zettle by PayPal</h4>
-            <p>Kundtjänst, augusti 2022 - januari 2023</p>
-            <p>Arbetade med kundtjänst för svenska och norska marknaden. Huvudsakliga arbetsuppgifter inkluderade:</p>
-            <ul>
-                <li>Hantering av kundsupport via telefon</li>
-                <li>Merförsäljning till befintliga kunder</li>
-                <li>Support på både svenska och norska</li>
-            </ul>
-        </div>
-
-        <div class="cv-item">
-            <h4>Huddinge kommun & Botkyrka kommun</h4>
-            <p>Hemtjänst, juni 2021 - september 2021</p>
-            <p>Arbetade parallellt i båda kommunerna med omsorg och stöd till vårdtagare.</p>
-        </div>
-
-        <div class="cv-item">
-            <h4>Botkyrka kommun</h4>
-            <p>Trädgårdsarbete, juni 2019 - juli 2019</p>
-            <p>Säsongsarbete med fokus på parkskötsel och trädgårdsunderhåll.</p>
-        </div>
-
-        <div class="cv-item">
-            <h4>Folkes</h4>
-            <p>Servitör- och konferensvärd, april 2019 - juni 2019</p>
-            <p>Ansvarade för servering och värdskap vid konferenser och evenemang.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Easter egg container - bara ägget och hover-zonen -->
-<div class="easter-egg-container">
-    <div class="egg-zone"></div>
-    <img id="easter-egg" src="../Asset/Pokemon-egg.png" alt="Easter Egg" class="hidden-egg">
-</div>
-
-<div id="hackerModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('hackerModal')">&times;</span>
-        <h2>Grattis!</h2>
-        <p>Du skrev 1337! Du är en riktig hacker! 🎉</p>
-    </div>
-</div>
-<script>
-    let keySequence = '';
-    
-    document.addEventListener('keydown', (event) => {
-        keySequence += event.key;
-        
-        // Behåll bara de senaste 4 tecknen
-        if (keySequence.length > 4) {
-            keySequence = keySequence.slice(-4);
-        }
-        
-        // Kolla om sekvensen är "1337"
-        if (keySequence === '1337') {
-            document.getElementById('hackerModal').style.display = 'block';
-            keySequence = ''; // Återställ sekvensen
-        }
-    });
-
-    function closeModal(modalId) {
-        document.getElementById(modalId).style.display = 'none';
-        keySequence = ''; // Återställ sekvensen när modalen stängs
-    }
-</script>
 </body>
 </html>
