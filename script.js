@@ -87,24 +87,23 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.transition = 'background-image 1s ease-in-out';
         document.body.style.backgroundImage = `url("${imagePath}")`;
         
-        // Visa meddelandet och spara i localStorage
-        setTimeout(() => {
-            alert("Grattis, du hittade påskägget! 🎉");
-            localStorage.setItem('easterEggFound', 'true');
-            this.style.opacity = '1';
-            this.style.pointerEvents = 'auto';
-        }, 1000);
+        openModal('eggmodalId');
+       
+
     });
+    
 });
+
+
 
 document.addEventListener("keydown", detect1337);
 
-let inputBuffer = ""; // Håller reda på vad användaren skriver
+let inputBuffer = ""; 
 
 function detect1337(event) {
     inputBuffer += event.key;
     if (inputBuffer.includes("1337")) {
-        openModal('hackerModal'); // Ersätter alert med openModal
+        openModal('hackerModal'); // 
         inputBuffer = "";
     }
 
@@ -126,11 +125,4 @@ window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
         event.target.style.display = "none";
     }
-}
-
-let counter;
-
-for (let index = 0; index <length; index++) {
-    
-    counter++;
 }
