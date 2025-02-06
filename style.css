@@ -370,17 +370,17 @@ h2 {
 
 .animate-title {
     animation: modernFadeIn 2s cubic-bezier(0.23, 1, 0.32, 1), textGlow 3s ease-in-out infinite 2s;
-    opacity: 0; /* Start invisible, animation will make it visible */
-    animation-fill-mode: forwards; /* Keep the final state after animation */
-    position: relative; /* Changed from absolute to relative */
+    opacity: 0; 
+    animation-fill-mode: forwards; 
+    position: relative; 
     overflow: hidden;
     text-align: center;
     width: 100%;
     margin: 10rem 0 2rem 0;
     transition: all 0.3s ease;
-    font-size: 4rem; /* Increased from 2.5rem */
-    letter-spacing: -0.03em; /* Improves readability for large text */
-    color: #1a1a1a; /* Ensure the color contrasts with the background */
+    font-size: 4rem; 
+    letter-spacing: -0.03em; 
+    color: #1a1a1a; 
 }
 
 /* Responsive adjustments */
